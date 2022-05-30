@@ -16,24 +16,23 @@ public class Reservation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private Long spotId;
+	private Spot spot;
 	private LocalDateTime start;
 	private LocalDateTime end;
 	private boolean paid;
 	
 	public Reservation() {}
 
-	public Reservation(Long id, Long spotId, LocalDateTime start, LocalDateTime end, boolean paid) {
-		super();
+	public Reservation(Long id, Spot spot, LocalDateTime start, LocalDateTime end, boolean paid) {
 		this.id = id;
-		this.spotId = spotId;
+		this.spot = spot;
 		this.start = start;
 		this.end = end;
 		this.paid = paid;
 	}
 
-	public Reservation(Long spotId, LocalDateTime start, LocalDateTime end, boolean paid) {
-		this.spotId = spotId;
+	public Reservation(Spot spot, LocalDateTime start, LocalDateTime end, boolean paid) {
+		this.spot = spot;
 		this.start = start;
 		this.end = end;
 		this.paid = paid;
@@ -47,12 +46,12 @@ public class Reservation {
 		this.id = id;
 	}
 
-	public Long getSpotId() {
-		return spotId;
+	public Spot getSpot() {
+		return spot;
 	}
 
-	public void setSpotId(Long spotId) {
-		this.spotId = spotId;
+	public void setSpot(Spot spot) {
+		this.spot = spot;
 	}
 
 	public LocalDateTime getStart() {
@@ -78,7 +77,5 @@ public class Reservation {
 	public void setPaid(boolean paid) {
 		this.paid = paid;
 	}
-	
-	
 
 }
